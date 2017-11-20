@@ -21,15 +21,18 @@ public class View extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.GRAY);
         g.fillRect(0, 0, this.getSize().width, this.getSize().height);
         drawField(g);
         drawPlayer(g);
+        g.setFont(new Font("Arial", Font.ITALIC, 26));
+        g.drawString("Use Arrows", 420, 200);
+        g.drawString("for control", 420, 250);
     }
 
     private void drawField(Graphics g2) {
-        g2.setColor(Color.BLACK);
-        g2.drawRect(1, 1, controller.getField().getWidth(), controller.getField().getHeight());
+        g2.setColor(Color.WHITE);
+        g2.fillRect(1, 1, controller.getField().getWidth(), controller.getField().getHeight());
     }
 
     private void drawPlayer(Graphics g2) {
